@@ -1,0 +1,6 @@
+Para executar o jogo, siga os seguintes passos:
+
+1 - Abra o terminal manualmente ou usando o atalho da sua IDE (no InteliJ é Alt+F12)
+2 - Digite "cd .\src\"
+3 - Digite "javac .\Executavel.java\"
+4 - Digite "java .\Executavel.java\"
