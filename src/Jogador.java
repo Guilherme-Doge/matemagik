@@ -5,7 +5,7 @@ public class Jogador {
     private static int experiencia = 0;
     private static int nivel = 1;
     private static List<Item> inventario = new ArrayList<Item>();
-    private static int vida;
+    private static int vida = 10;
     private static String nome;
 
     static {
@@ -61,5 +61,14 @@ public class Jogador {
 
     public static void setNome(String nome) {
         Jogador.nome = nome;
+    }
+
+    public static void diminuirVida(int quantidade) {
+        if ((Jogador.getVida() - quantidade) > 0) {
+            Executavel.escreverMensagem("Sua vida chegou em 0. Infelizmente, você perdeu... Boa sorte na próxima tentativa", 50);
+            System.exit(0);
+        } else {
+            Jogador.vida -= quantidade;
+        }
     }
 }

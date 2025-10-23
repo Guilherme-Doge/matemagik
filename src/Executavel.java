@@ -59,6 +59,9 @@ public class Executavel {
                                 escreverMensagem("Essa corda é muito grande e acaba ficando frouxa quando você tenta puxá-la, não sendo possível abrir a porta", 50);
                                 break;
                             }
+                            default : {
+                                escreverMensagem("Essa não é uma corda existente", 50);
+                            }
                         }
                     }
                     catch (InputMismatchException e) {
@@ -88,6 +91,25 @@ public class Executavel {
                         resposta = SC.nextInt();
                         if (resposta != 12) {
                             escreverMensagem("Errado, " + resposta + " não é a quantidade de golpes", 50);
+                            Jogador.diminuirVida(1);
+                        }
+                    } catch (InputMismatchException e) {
+                        escreverMensagem("Opção Inválida", 50);
+                    }
+                }
+                escreverMensagem("Perfeito!", 50);
+                escreverMensagem("Espera um pouco...", 50);
+                while (resposta != 4) {
+                    escreverMensagem("A quantidade de golpes que você desferiu não foram 24, como deveria ser. Foram apenas 22.\n", 50);
+                    escreverMensagem("Isso significa que um dos goblins fugiu\n", 50);
+                    escreverMensagem("Das sombras, um último goblin pula em você. Ele é igual aos outros. Quantos golpes você deve desferir para terminar o combate?\n", 50);
+                    try {
+                        resposta = SC.nextInt();
+                        if (resposta != 2) {
+                            escreverMensagem("Errado. Você só precisa desferir 2 golpes para finalizar o combate.\n", 50);
+                            Jogador.diminuirVida(1);
+                        } else {
+                            escreverMensagem("Exatamente. A quantidade de golpes restantes era 2.\n", 50);
                         }
                     } catch (InputMismatchException e) {
                         escreverMensagem("Opção Inválida", 50);
@@ -96,14 +118,14 @@ public class Executavel {
                 escreverMensagem("Perfeito!", 50);
                 escreverMensagem("Espera um pouco...", 50);
                 while (resposta != 24) {
-                    escreverMensagem("A quantidade de golpes que você desferiu não foram 24, como deveria ser. Foram apenas 22.\n", 50);
-                    escreverMensagem("Isso significa que um dos goblins fugiu\n", 50);
-                    escreverMensagem("Das sombras, um último goblin pula em você. Ele é igual aos outros. Quantos golpes você deve desferir para terminar o combate?\n", 50);
+                    escreverMensagem("", 50);
                     try {
                         resposta = SC.nextInt();
-                        if (resposta != 22) {
+                        if (resposta != 0) {
 
                         }
+                    } catch (InputMismatchException e) {
+                        escreverMensagem("Opção Inválida", 50);
                     }
                 }
             } catch (InputMismatchException e) {
@@ -124,6 +146,23 @@ public class Executavel {
         }
     }
 }
+
+/* fazer desafios usando:
+* divisão
+* potenciação
+* raiz quadrada
+* equações de 1º e 2º grau
+* lei angular
+* Seno, Cosseno e Tangente
+* Números complexos
+* operações com números complexos
+* amostragem
+* média, mediana, moda
+* variância e desvio padrão
+* outlayers
+* Espaço amostral e evento
+* permutação
+* lógica E e OU */
 
 /*Se você perceber, todos os desafios seguem a seguinte estrurua:
 * escreverMensagem(parabenização pelo desafio anterior)
