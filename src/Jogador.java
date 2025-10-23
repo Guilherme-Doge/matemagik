@@ -2,16 +2,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Jogador {
-    private static int experiencia = 0;
-    private static int nivel = 1;
     private static List<Item> inventario = new ArrayList<Item>();
     private static int vida = 10;
     private static String nome;
 
     static {
         Item cordaPequena = new Item("Corda Pequena", "Uma corda de 1 metro");
-        Item cordaMedia = new Item("Corda Pequena", "Uma corda de 5 metros");
-        Item cordaGrande = new Item("Corda Pequena", "Uma corda de 10 metros");
+        Item cordaMedia = new Item("Corda Média", "Uma corda de 5 metros");
+        Item cordaGrande = new Item("Corda Grande", "Uma corda de 10 metros");
         Arma espada = new Arma("Espada Enferrujada", "Uma espada de família que já está enferrujada", 0, 0);
         Arma arco = new Arma("Arco e felcha", "Arco e flecha de madeira", 18, 20);
         Item lamparina = new Item("Lamparina", "Uma lamparina que ilumina até 9 metros de distância");
@@ -21,22 +19,6 @@ public class Jogador {
         inventario.add(espada);
         inventario.add(arco);
         inventario.add(lamparina);
-    }
-
-    public static int getExperiencia() {
-        return experiencia;
-    }
-
-    public static void setExperiencia(int experiencia) {
-        Jogador.experiencia = experiencia;
-    }
-
-    public static int getNivel() {
-        return nivel;
-    }
-
-    public static void setNivel(int nivel) {
-        Jogador.nivel = nivel;
     }
 
     public static List<Item> getInventario() {
@@ -64,7 +46,7 @@ public class Jogador {
     }
 
     public static void diminuirVida(int quantidade) {
-        if ((Jogador.getVida() - quantidade) > 0) {
+        if ((Jogador.getVida() - quantidade) <= 0) {
             Executavel.escreverMensagem("Sua vida chegou em 0. Infelizmente, você perdeu... Boa sorte na próxima tentativa", 50);
             System.exit(0);
         } else {
